@@ -24,7 +24,7 @@
                 <a href="">Forgot password?</a>
             </div>
         </div>
-        <p class="formulario__p">Not a member? <a class="formulario__a" href="">Create Account</a></p>
+        <p class="formulario__p">Not a member? <a class="formulario__a" href="register_account.php">Create Account</a></p>
     </form>
 </body>
 </html>
