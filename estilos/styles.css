@@ -1,0 +1,138 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    min-height: 100%;
+}
+body{
+    background-image: linear-gradient(to top right, #3B447D, #8A5EB6);
+    background-repeat: no-repeat;
+    font-family: sans-serif;
+}
+
+/*ESTILOS FORMULARIO*/
+.formulario{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.fa-user-circle{
+    font-size: 60px;
+    color: white;
+}
+.formulario__h2{
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-weight: lighter;
+    position: relative;
+}
+.formulario__h2::before{
+    content: "";
+    border: 1px solid white;
+    position: absolute;
+    width: 55px;
+    top: 50%;
+    left: 25%;
+}
+.formulario__h2::after{
+    content: "";
+    border: 1px solid white;
+    position: absolute;
+    width: 55px;
+    top: 50%;
+    right: 25%;
+}
+.formulario__input{
+    display: block;
+    height: 40px;
+    margin: 10px 0px;
+    width: 300px;
+    padding: 0px 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    border: 1px solid white;
+    caret-color: white;
+    outline: none;
+}
+.formulario__input:nth-child(1){
+    
+}
+.formulario__input:nth-child(2){
+
+}
+.formulario__input::placeholder{
+    color: white;
+}
+.formulario__button{
+    height: 40px;
+    width: 300px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: #FBB03C;
+    cursor: pointer;
+}
+.formulario__button:hover{
+    background-color: #db9730;
+    transition: .4s;
+}
+.formulario__div{
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+}
+.formulario__div div:nth-child(1){
+    width: 50%;
+}
+.formulario__div div:nth-child(1) input{
+    display: none;
+}
+.formulario__div div:nth-child(1) label{
+    color: white;
+    font-size: 15px;
+    padding-left: 1.3em;
+    position: relative;
+}
+.formulario__div div:nth-child(1) label::before{
+    content: "";
+    border: 1px solid white;
+    border-radius: 3px;
+    position: absolute;
+    height: 0.8em;
+    width: 0.8em;
+    left: 0px;
+    top: 1px;
+}
+.formulario__div div:nth-child(1) input:checked + label::before{
+    border-color: white;
+    content: '\f00c';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+.formulario__div div:nth-child(2) a{
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+.formulario__div div:nth-child(2) a:hover {
+    color: #FBB03C;
+    transition: .4s;
+}
+.formulario__p {
+    color: white;
+}
+.formulario__a {
+    color: #FBB03C;
+    text-decoration: none;
+}
+.formulario__a:hover {
+    color: #db9730;
+    transition: .4s;
+}
