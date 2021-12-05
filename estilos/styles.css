@@ -48,6 +48,35 @@ body{
     top: 50%;
     right: 25%;
 }
+/*ESTILOS ARCHIVO REGISTER_ACCOUNT.PHP*/
+.formulario__h2--registerAccount::before {
+    content: "";
+    border: 1px solid white;
+    position: absolute;
+    width: 55px;
+    top: 50%;
+    left: 12%;
+}
+.formulario__h2--registerAccount::after {
+    content: "";
+    border: 1px solid white;
+    position: absolute;
+    width: 55px;
+    top: 50%;
+    right: 12%;
+}
+.formulario__p--registerAccount {
+    color: white;
+}
+.formulario__a--registerAccount {
+    text-decoration: none;
+    color: #FBB03C;
+}
+.formulario__a--registerAccount:hover {
+    color: #db9730;
+    transition: .4s;
+}
+/*---------------------------------------*/
 .formulario__input{
     display: block;
     height: 40px;
