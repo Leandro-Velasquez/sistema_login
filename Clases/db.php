@@ -29,6 +29,7 @@
 
             $date = $sql->fetch(PDO::FETCH_ASSOC);
 
+            //Si existe nos va retornar un array asociativo con los datos, en caso que no exista nos va devolver false
             return $date;
         }
 

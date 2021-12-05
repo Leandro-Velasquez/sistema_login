@@ -10,5 +10,6 @@
 </head>
 <body>
     <h1>Ha ingresado con exito</h1>
+    <a class="formulario__a" href="index.php">Log Out</a>
 </body>
 </html>
