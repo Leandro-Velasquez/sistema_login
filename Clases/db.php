@@ -1,11 +1,15 @@
 <?php
     class Db{
+        private $host = "localhost:3307";
+        private $dbname = "sistema_login";
+        private $user = "root";
+        private $password = "";
         private $pdo;
 
-        public function __construct($host, $dbname, $user, $password)
+        public function __construct()
         {
             try{
-                $this->pdo = new PDO("mysql:host=" . $host . ";dbname=" . $dbname, $user, $password);
+                $this->pdo = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->dbname, $this->user, $this->password);
             }
             catch(PDOException $e) {
                 die("error connecting to database: " . $e->getMessage());
