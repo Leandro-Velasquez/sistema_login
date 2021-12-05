@@ -21,7 +21,7 @@
                 <label for="rememberMe">Remember me</label>
             </div>
             <div>
-                <a href="">Forgot password?</a>
+                <a href="forgot_password.php">Forgot password?</a>
             </div>
         </div>
         <p class="formulario__p">Not a member? <a class="formulario__a" href="register_account.php">Create Account</a></p>

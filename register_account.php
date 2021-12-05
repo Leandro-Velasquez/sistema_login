@@ -19,7 +19,7 @@
         <input class="formulario__input" type="text" placeholder="Confirm Password">
         <input class="formulario__input" type="text" placeholder="Email Address">
         <button class="formulario__button">Register</button>
-        <p class="formulario__p--registerAccount">or <a class="formulario__a--registerAccount" href="">Login</a></p>
+        <p class="formulario__p--registerAccount">or <a class="formulario__a--registerAccount" href="index.php">Login</a></p>
     </form>
 </body>
 </html>

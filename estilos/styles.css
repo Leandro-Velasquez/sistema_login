@@ -77,6 +77,24 @@ body{
     transition: .4s;
 }
 /*---------------------------------------*/
+/*ESTILOS ARCHIVO FORGOT_PASSWORD.PHP*/
+.formulario__h2--forgot-password::before {
+    content: "";
+    border: 1px solid white;
+    position: absolute;
+    width: 55px;
+    top: 50%;
+    left: 12%;
+}
+.formulario__h2--forgot-password::after {
+    content: "";
+    border: 1px solid white;
+    position: absolute;
+    width: 55px;
+    top: 50%;
+    right: 12%;
+}
+/*----------------------------------------*/
 .formulario__input{
     display: block;
     height: 40px;
