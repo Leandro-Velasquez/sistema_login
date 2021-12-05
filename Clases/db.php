@@ -20,6 +20,7 @@
         }
 
         public function getDatos($userName, $password){
+            //Obtiene un registro en base al nombre de usuario y contraseña
             $sql = $this->pdo->prepare("SELECT * FROM usuarios WHERE userName=:u AND password=:p");
 
             $sql->bindParam(":u", $userName);
@@ -33,6 +34,18 @@
             else{
                 return false;
             }
+        }
+
+        public function insert($firstName, $lastName, $userName, $password, $email){
+            $sql = $this->pdo->prepare("INSERT INTO usuarios (firstName, lastName, userName, password, email) VALUES (:f, :l, :u, :p, :e)");
+
+            $sql->bindParam(":f", $firstName);
+            $sql->bindParam(":l", $lastName);
+            $sql->bindParam(":u", $userName);
+            $sql->bindParam(":p", $password);
+            $sql->bindParam(":e", $email);
+
+            $sql->execute();
         }
     }
 
