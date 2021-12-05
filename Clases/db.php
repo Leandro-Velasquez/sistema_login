@@ -19,6 +19,19 @@
             }
         }
 
+        public function searchUserNameAndEmail($userName, $email) {
+            $sql = $this->pdo->prepare("SELECT userName, email FROM usuarios WHERE userName = :u AND email = :e");
+
+            $sql->bindParam(":u", $userName);
+            $sql->bindParam(":e", $email);
+
+            $sql->execute();
+
+            $date = $sql->fetch(PDO::FETCH_ASSOC);
+
+            return $date;
+        }
+
         public function getDatos($userName, $password){
             //Obtiene un registro en base al nombre de usuario y contraseña
             $sql = $this->pdo->prepare("SELECT * FROM usuarios WHERE userName=:u AND password=:p");
