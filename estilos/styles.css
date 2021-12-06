@@ -87,6 +87,15 @@ body{
     color: #db9730;
     transition: .4s;
 }
+.formulario__p-invalid--registerAccount {
+    width: 300px;
+    padding: 8px 0px;
+    text-align: center;
+    background-color: #630000;
+    border-radius: 5px;
+    color: white;
+    font-size: 12px;
+}
 /*---------------------------------------*/
 /*ESTILOS ARCHIVO FORGOT_PASSWORD.PHP*/
 .formulario__h2--forgot-password::before {
