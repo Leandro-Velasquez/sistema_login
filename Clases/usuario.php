@@ -11,7 +11,13 @@
             }
         }
 
+        public function toRegister($firstName, $lastName, $userName, $password, $email) {
+            //Registrar cuenta
+            $this->insert($firstName, $lastName, $userName, $password, $email);
+        }
+
         public function logOut(){
+            //Cerrar sesion
 
         }
     }
