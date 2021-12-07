@@ -1,6 +1,7 @@
 <?php
     require "Clases/db.php";
     require "Clases/usuario.php";
+    require "Clases/listaErrores.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register account</title>
-    <link rel="stylesheet" href="estilos/styles.css?2">
+    <link rel="stylesheet" href="estilos/styles.css?4">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
 </head>
 <body>
@@ -18,36 +19,41 @@
             if(isset($_POST["firstName"])){
 
                 $usuario = new Usuario();
+                $listaErrores = new listaErrores();
 
                 $firstName = $_POST["firstName"];
                 $lastName = $_POST["lastName"];
-                $userName = isset($_POST["userName"])?$_POST["userName"]:null;
+                $userName = $_POST["userName"];
                 $password = $_POST["password"];
                 $confpassword = $_POST["confpassword"];
-                $email = isset($_POST["email"])?$_POST["email"]:null;
+                $email = $_POST["email"];
 
                 $msg_errorUserName = null;
                 $msg_errorEmail = null;
                 $msg_errorPassword = null;
 
-                
-                if($usuario->searchUserName($userName)["userName"] == false && $usuario->searchEmail($email)["email"] == false && $password == $confpassword){
-                    //Si nos devuelve false, quiere decir que no existe ningun registro en la base de datos, con ese userName ni email. En ese caso podemos registrar al usuario.
-                    $usuario->toRegister($firstName, $lastName, $userName, $password, $email);
-                }
-                else if($usuario->searchUserName($userName)["userName"] != false){
-                    $msg_errorUserName = '<p class="formulario__p-invalid--registerAccount"><i class="fas fa-exclamation-triangle"></i> the username address is already in use</p>';
-                    
-                }
-                else if($usuario->searchEmail($email)["email"] != false){
-                    $msg_errorEmail = '<p class="formulario__p-invalid--registerAccount"><i class="fas fa-exclamation-triangle"></i> the email address is already in use</p>';
-                    
+                if($listaErrores->checkAllIsValid($firstName, $lastName, $userName, $password, $email) && $password == $confpassword){
+                    if($listaErrores->checkUserNameExists($userName)){
+                        $msg_errorUserName = $listaErrores->checkUserNameReturnP($userName);
+                    }
+                    else if(!$listaErrores->checkEmailExists($email)){
+                        $msg_errorEmail = $listaErrores->checkEmailReturnP($email);
+                    }
+                    else{
+                        $usuario->toRegister($firstName, $lastName, $userName, $password, $email);
+                        ?>
+                        <p class="formulario__p-registered--registerAccount"><i class="fas fa-check"></i> The account was successfully registered</p>
+                        <?php
+                    }
                 }
                 else if($password != $confpassword){
                     $msg_errorPassword = '<p class="formulario__p-invalid--registerAccount"><i class="fas fa-exclamation-triangle"></i> Passwords do not match</p>';
                 }
-
-                
+                else{
+                    ?>
+                        <p class="formulario__p-invalid--registerAccount"><i class="fas fa-exclamation-triangle"></i> do not leave empty fields</p>
+                    <?php
+                }
             }
         ?>
         <i class="far fa-user-circle"></i>
