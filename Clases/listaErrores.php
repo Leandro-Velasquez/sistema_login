@@ -13,7 +13,7 @@
         }
 
         public function checkUserNameExists($userName){
-            if($this->searchUserName($userName) == false){
+            if($this->searchUserName($userName)){
                 return true;
             }
             else{
@@ -22,7 +22,7 @@
         }
 
         public function checkPasswordIsValid($password){
-            if(!empty($password) && strlen($password) > 3){
+            if(!empty($password) && strlen($password) > 2){
                 return true;
             }
             else{
@@ -63,6 +63,9 @@
         public function checkUserNameReturnP($userName) {
             if (empty($userName)){
                 return '<p class="formulario__p-invalid--registerAccount"><i class="fas fa-exclamation-triangle"></i> don\'t leave username field empty</p>';
+            }
+            else if($this->checkUserNameExists($userName)){
+                return '<p class="formulario__p-invalid--registerAccount"><i class="fas fa-exclamation-triangle"></i> username already exist</p>';
             }
             else{
                 return null;
