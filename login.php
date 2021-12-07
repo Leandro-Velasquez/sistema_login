@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    $user = isset($_SESSION['user'])?$_SESSION['user']:null;
+    if(empty($user)){
+        header("Location:index.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +17,6 @@
 </head>
 <body>
     <h1>Ha ingresado con exito</h1>
-    <a class="formulario__a" href="index.php">Log Out</a>
+    <a class="formulario__a" href="log_out.php">Log Out</a>
 </body>
 </html>
