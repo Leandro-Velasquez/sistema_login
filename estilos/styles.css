@@ -78,6 +78,7 @@ body{
 }
 .formulario__p--registerAccount {
     color: white;
+    margin: 0;
 }
 .formulario__a--registerAccount {
     text-decoration: none;
@@ -86,6 +87,18 @@ body{
 .formulario__a--registerAccount:hover {
     color: #db9730;
     transition: .4s;
+}
+.formulario__p-registered--registerAccount{
+    width: 300px;
+    padding: 8px 0px;
+    text-align: center;
+    background-color: #519259;
+    border-radius: 5px;
+    color: white;
+    font-size: 12px;
+}
+.fa-check {
+    
 }
 .formulario__p-invalid--registerAccount {
     width: 300px;
