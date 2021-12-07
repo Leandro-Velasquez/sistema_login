@@ -2,6 +2,8 @@
     class Usuario extends Db{
         public function login($username, $password){
             if($this->getDatos($username, $password)){
+                session_start();
+                $_SESSION['user'] = $username;
                 header("Location: login.php");
             }
             else{
