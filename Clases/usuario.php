@@ -1,7 +1,7 @@
 <?php
     class Usuario extends Db{
         public function login($username, $password){
-            if($this->getDatos($username, $password)){
+            if($this->getDatos($username, md5($password))){
                 session_start();
                 $_SESSION['user'] = $username;
                 header("Location: login.php");
@@ -15,7 +15,7 @@
 
         public function toRegister($firstName, $lastName, $userName, $password, $email) {
             //Registrar cuenta
-            $this->insert($firstName, $lastName, $userName, $password, $email);
+            $this->insert($firstName, $lastName, $userName, md5($password), $email);
         }
 
         public function logOut(){
