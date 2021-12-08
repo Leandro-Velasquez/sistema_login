@@ -5,6 +5,7 @@ html{
     min-height: 100%;
 }
 body{
+    margin: 0;
     background-image: linear-gradient(to top right, #3B447D, #8A5EB6);
     background-repeat: no-repeat;
     font-family: sans-serif;
@@ -98,7 +99,7 @@ body{
     font-size: 12px;
 }
 .fa-check {
-    
+
 }
 .formulario__p-invalid--registerAccount {
     width: 300px;
@@ -216,4 +217,93 @@ body{
 .formulario__a:hover {
     color: #db9730;
     transition: .4s;
+}
+
+
+
+
+
+
+
+/*ESTILOS ARCHIVO LOGIN.PHP*/
+.nav {
+    height: 60px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #24292f;
+}
+.menu {
+    height: 30px;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    /*background-color: #519259;*/
+}
+.menu__item:hover {
+    /*background-color: #44814b;*/
+    transition: .4s;
+}
+.menu__a {
+    display: block;
+    padding: 6px 10px;
+    text-decoration: none;
+    color: white;
+}
+.menu__a:hover {
+    color: rgb(175, 174, 174);
+    transition: .2s;
+}
+.menu__item--container-bars-menu {
+    position: relative;
+}
+.menu-bars {
+    padding: 0;
+    width: 150px;
+    list-style: none;
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+}
+.menu-bars__item {
+    text-align: center;
+}
+.menu-bars__item:hover {
+    background-color: #519259;
+}
+.menu-bars__a {
+    display: block;
+    padding: 6px 10px;
+    text-decoration: none;
+    color: black;
+}
+.menu-bars__a:hover {
+    color: white;
+}
+.menu-bars__span {
+    font-weight: 600;
+}
+.fa-bars {
+    padding: 5px;
+    background-color: #519259;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+.fa-bars:hover {
+    background-color: #44814b;
+    transition: .4s;
+}
+
+
+
+
+
+/*ESTILOS JAVASCRIPT*/
+.toggle-menu{
+    display: block;
 }
