@@ -11,6 +11,8 @@ require dirname(__DIR__)."../Clases/db.php";
 
 Class RecoverPassword extends Db{
 
-    
+    public function generateNewPassword(){
+        return rand(10000000, 99999999);
+    }
 }
 ?>
