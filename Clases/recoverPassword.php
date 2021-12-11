@@ -14,5 +14,9 @@ Class RecoverPassword extends Db{
     public function generateNewPassword(){
         return rand(10000000, 99999999);
     }
+
+    public function generateToken($email){
+        return md5($this->getId($email) . time() . rand(1000, 9999));
+    }
 }
 ?>
