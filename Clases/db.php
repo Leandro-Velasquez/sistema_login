@@ -57,6 +57,18 @@
             return $date;
         }
 
+        public function getPassword($email){
+            $sql = $this->pdo->prepare("SELECT password FROM usuarios WHERE email=:e");
+
+            $sql->bindParam(":e", $email);
+
+            $sql->execute();
+
+            $date = $sql->fetch(PDO::FETCH_ASSOC);
+
+            return $date;
+        }
+
         public function getDatos($userName, $password){
             //Obtiene un registro en base al nombre de usuario y contraseña
             $sql = $this->pdo->prepare("SELECT * FROM usuarios WHERE userName=:u AND password=:p");
