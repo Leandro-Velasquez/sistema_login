@@ -21,6 +21,11 @@
                 $usuario = new Usuario();
                 $usuario->login($user, $password);
             }
+            else if(isset($_SESSION["cambioPassword"])){
+                ?>
+                <p class="formulario__p-registered--registerAccount"><i class="fas fa-check"></i> A new password has been assigned, please log in with your new password</p>
+                <?php
+            }
         ?>
         <i class="far fa-user-circle"></i>
         <h2 class="formulario__h2">Sign In</h2>
